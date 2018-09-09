@@ -4,7 +4,7 @@
   "description": "Greek name from Onomastiki to Klikiti",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./tests"
   },
   "author": "Christos Panagiotakopoulos <chrispanag@gmail.com>",
   "license": "MIT",
