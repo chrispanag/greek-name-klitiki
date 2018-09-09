@@ -70,6 +70,9 @@ function klitiki(word, onlyUppercase = true) {
         return word.slice(0, word.length - 1);
     if (category == 'PRO') 
         return word.slice(0, word.length - 2) + 'ε';
+
+    // If it ends in -ος and it doesn't have an accent :/
+    return word;
 }
 
 module.exports = klitiki;
