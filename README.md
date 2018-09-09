@@ -14,3 +14,12 @@ const klitiki = require('greek-name-klitiki');
 // name = 'Χρήστο'
 const name = klitiki('Χρήστος');
 ```
+
+## To be added
+
+* Some tests will be added soon
+* Some documentation inside the code (JSDOC)
+
+## License
+
+[MIT](LICENSE)
