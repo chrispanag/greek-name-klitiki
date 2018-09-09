@@ -1,6 +1,6 @@
 {
   "name": "greek-name-klitiki",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Greek name from Onomastiki to Klikiti",
   "main": "index.js",
   "scripts": {
