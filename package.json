@@ -1,0 +1,15 @@
+{
+  "name": "greek-name-klitiki",
+  "version": "1.0.0",
+  "description": "Greek name from Onomastiki to Klikiti",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christos Panagiotakopoulos <chrispanag@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "hyphenation.el-monoton": "^0.2.1",
+    "hypher": "^0.2.5"
+  }
+}
