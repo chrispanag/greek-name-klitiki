@@ -11,7 +11,7 @@ const h = new Hypher(greek);
 function accentCategorization(word) {
     const hyphenated = h.hyphenate(word);
     const syllableNum = hyphenated.findIndex(s => isAccented(s));
-
+    
     if (syllableNum == -1)
         return false;
 
@@ -40,13 +40,14 @@ function isAccented(string) {
 
 /**
  * 
- * @param {string} word 
+ * @param {string} word
+ * @param {boolean} onlyUppercase
  * @returns {string} - The Klitiki of the string
  */
-function klitiki(word) {
-    if (!(word[0].toUpperCase() == word[0])) {
+function klitiki(word, onlyUppercase = true) {
+    if (!(word[0].toUpperCase() == word[0]) && onlyUppercase) {
         console.log("Not a name");
-        return string;
+        return word;
     }
 
     // Αρσενικά σε -ας / ης
@@ -57,7 +58,12 @@ function klitiki(word) {
     if (!word.endsWith('ος') && !word.endsWith('ός')) 
         return word;
 
+    // Αρσενικά σε -ιος (Αναστάσιος, Γεώργιος, Γρηγόριος) -> 
+    if (word.endsWith('ιος')) 
+        return word.slice(0, word.length - 2) + 'ε';;
+
     const category = accentCategorization(word);
+    
     if (category == 'LIG') 
         return word.slice(0, word.length - 2) + 'ό';
     if (category == 'PAR') 
