@@ -1,5 +1,5 @@
 # greek-name-klitiki
-A NodeJS package that transforms greek names to the "Calling" grammatical form (klitiki)
+A NodeJS package that transforms greek names to the "Vocative" grammatical form (klitiki)
 
 ## How to use
 
