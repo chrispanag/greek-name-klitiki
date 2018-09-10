@@ -19,11 +19,11 @@ const h = new Hypher(greek);
  * @returns {boolean}
  */
 function isAccented(string) {
-    const accentedCharacters = ['ά', 'έ', 'ή', 'ί', 'ό', 'ύ', 'ώ']; 
+    const accentedCharacters = ['ά', 'έ', 'ή', 'ί', 'ό', 'ύ', 'ώ'];
 
     for (char of accentedCharacters)
-            if (string.indexOf(char) > -1 || string.indexOf(char.toUpperCase()) > -1) 
-                return true;
+        if (string.indexOf(char) > -1 || string.indexOf(char.toUpperCase()) > -1)
+            return true;
 
     return false;
 }
@@ -31,24 +31,24 @@ function isAccented(string) {
 /**
  * Categorizes a word depending to the syllable that is accented
  * @param {string} word 
- * @returns {string|false} Returns 'LIG', 'PAR' or 'PRO' depending on where the accent is. If the word is not accented it returns 'false'
+ * @returns {string|false} - Returns 'LIG', 'PAR' or 'PRO' depending on where the accent is. If the word is not accented it returns 'false'
  */
 function accentCategorization(word) {
     const hyphenated = h.hyphenate(word);
     const syllableNum = hyphenated.findIndex(s => isAccented(s));
-    
+
     // This word is not accented
     if (syllableNum == -1)
         return false;
 
     // Λήγουσα - (eg: Πηγή)
-    if (syllableNum == (hyphenated.length - 1) && !isAccented(word[0])) 
+    if (syllableNum == (hyphenated.length - 1) && !isAccented(word[0]))
         return 'LIG';
 
     // Παραλήγουσα - (eg: Χρήστος)
-    if (syllableNum == (hyphenated.length - 2)) 
+    if (syllableNum == (hyphenated.length - 2))
         return 'PAR';
-    
+
     // Προπαραλήγουσα - (eg: Αλέξανδρος)
     return 'PRO';
 }
@@ -59,7 +59,7 @@ function accentCategorization(word) {
  * // returns "Χρήστο"
  * klitiki("Χρήστος")
  * @param {string} word
- * @param {boolean} onlyUppercase
+ * @param {boolean} [onlyUppercase=true]
  * @returns {string} - The Vocative of the word
  */
 function klitiki(word, onlyUppercase = true) {
@@ -73,20 +73,20 @@ function klitiki(word, onlyUppercase = true) {
         return word.slice(0, word.length - 1);
 
     // Αρσενικά σε -ος
-    if (!word.endsWith('ος') && !word.endsWith('ός')) 
+    if (!word.endsWith('ος') && !word.endsWith('ός'))
         return word;
 
     // Αρσενικά σε -ιος (Αναστάσιος, Γεώργιος, Γρηγόριος)
-    if (word.endsWith('ιος')) 
+    if (word.endsWith('ιος'))
         return word.slice(0, word.length - 2) + 'ε';;
 
     const category = accentCategorization(word);
-    
-    if (category == 'LIG') 
+
+    if (category == 'LIG')
         return word.slice(0, word.length - 2) + 'ό';    // Νικολός -> Νικολό
-    if (category == 'PAR') 
+    if (category == 'PAR')
         return word.slice(0, word.length - 1);          // Χρήστος -> Χρήστο
-    if (category == 'PRO') 
+    if (category == 'PRO')
         return word.slice(0, word.length - 2) + 'ε';    // Αλέξανδρος -> Αλέξανδρε
 
     // If it ends in -ος and it doesn't have an accent :/
