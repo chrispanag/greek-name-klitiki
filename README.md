@@ -1,6 +1,8 @@
 # greek-name-klitiki
 A NodeJS package that transforms greek names to the "Vocative" grammatical form (klitiki)
 
+**Demo:** https://greek-names-klitiki.herokuapp.com/
+
 ## How to use
 
 ### Install the greek-name-klitiki package via npm
