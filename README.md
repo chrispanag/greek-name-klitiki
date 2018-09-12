@@ -1,7 +1,7 @@
 # greek-name-klitiki
 A NodeJS package that transforms greek names to the "Vocative" grammatical form (klitiki)
 
-**Demo:** https://greek-names-klitiki.herokuapp.com/
+[**Link to a Demo app**](https://greek-names-klitiki.herokuapp.com/) that uses this package.
 
 ## How to use
 
@@ -13,8 +13,8 @@ A NodeJS package that transforms greek names to the "Vocative" grammatical form 
 ```javascript
 const klitiki = require('greek-name-klitiki');
 
-// name = 'Χρήστο'
-const name = klitiki('Χρήστος');
+// returns 'Χρήστο'
+klitiki('Χρήστος');
 ```
 
 ## To be added
