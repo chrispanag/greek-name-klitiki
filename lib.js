@@ -78,7 +78,11 @@ function klitiki(word, onlyUppercase = true) {
 
     // Αρσενικά σε -ιος (Αναστάσιος, Γεώργιος, Γρηγόριος)
     if (word.endsWith('ιος'))
-        return word.slice(0, word.length - 2) + 'ε';;
+        return word.slice(0, word.length - 2) + 'ε';
+
+    // Εξαίρεση αρσενικά σε -ίνος (Κωνσταντίνος, Αυγουστίνος)
+    if (word.endsWith('ίνος'))
+        return word.slice(0, word.length - 2) + 'ε';
 
     const category = accentCategorization(word);
 
