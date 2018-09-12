@@ -19,7 +19,7 @@ const name = klitiki('Χρήστος');
 
 ## To be added
 
-* Some tests will be added soon
+* Some tests will be added soon (With a testing Framework)
 * Some documentation inside the code (JSDOC)
 
 ## License

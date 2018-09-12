@@ -2,6 +2,13 @@
   "name": "greek-name-klitiki",
   "version": "1.0.3",
   "description": "Greek name from Onomastiki to Klikiti",
+  "keywords": [
+    "greek",
+    "klitiki",
+    "vocative",
+    "names",
+    "greek-language"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "node ./tests"
@@ -11,5 +18,8 @@
   "dependencies": {
     "hyphenation.el-monoton": "^0.2.1",
     "hypher": "^0.2.5"
+  },
+  "engines": {
+    "node": ">=8.11.4"
   }
 }
