@@ -33,7 +33,6 @@ assert(klitiki("Ναπολέων") == "Ναπολέοντα"); //this is a very 
 assert(klitiki("Ναπολέοντας") == "Ναπολέοντα");
 assert(klitiki("Πλάτων") == "Πλάτωνα");
 assert(klitiki("Πλάτωνας") == "Πλάτωνα");
-assert(klitiki("Πλάτων") == "Πλάτωνα");
 assert(klitiki("Ιουστινιανός") == "Ιουστινιανέ");
 assert(klitiki("Ίρις") == "Ίριδα"); //these female -ις names are actually a bit tricky, might remain the same in klitiki or change to -ιδα, depending on how formal/old greek you are using
 assert(klitiki("Σαπφώ") == "Σαπφώ");
